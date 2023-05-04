@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { RightSideComponent } from './main/right-side/rightSide.component';
 import { LeftSideComponent } from './main/left-side/leftSide.component';
+import { InformationComponent } from './main/information/information.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LeftSideComponent } from './main/left-side/leftSide.component';
     FooterComponent,
     MainComponent,
     RightSideComponent,
-    LeftSideComponent
+    LeftSideComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,
