@@ -2,7 +2,20 @@
   background-color:rgb(233, 255, 231);
 }
 
-.container {
-  align-items: center;
-  font-size:0.9em;
+.css-49cscz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.css-y7vg0q {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding-inline: 20px;
 }

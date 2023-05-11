@@ -1,10 +1,200 @@
 <div class="container">
+  <!-- <div class="col"><app-leftSide></app-leftSide></div>
+    <div class="col"><app-rightSide></app-rightSide></div> -->
   <div class="row">
-    <div class="col"><app-leftSide></app-leftSide></div>
-    <div class="col"><app-rightSide></app-rightSide></div>
+    <div class="col">
+      <div class="left-container fixed-height">
+        <div> <img src="assets/smart_storage.avif" alt="Image 2" class="img-fluid"><br>
+        </div>
+        <div class="imgs">
+          <div> <img src="assets/smart_storage.avif" alt="Image 2" class="img-fluid">
+            <p>Your text goescwxcwcw here.</p>
+          </div>
+          <div> <img src="assets/smart_storage.avif" alt="Image 2" class="img-fluid"><br>
+            <p>Your text goesxwcwxcw here.</p>
+          </div>
+        </div>
+        <div id="lastItem" style="justify-content: center; display: flex;">
+          <button
+            style="border: 1px solid #1e9974; color: #1e9974; background-color: white;border-radius: 3px; padding: 10px; text-decoration: solid;">
+            Learn more</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="right-container items-column" #itemsColumn>
+        <div class="title1">
+          <h4>Select storage size</h4> HELP ME PICK A SIZE<br>
+        </div>
+        <div class="containerR">
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                5’ x 5’
+                <div>Small closet size</div>
+                <div>
+                  <div>$74/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="5x5">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                5’ x 10’
+                <div>Walk-in closet size</div>
+                <div>
+                  <div>$125/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="5x10">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 10’
+                <div>Garage size</div>
+                <div>
+                  <div>$218/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x10">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 15’
+                <div>Studio apartment</div>
+                <div>
+                  <div>$326/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x15">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 20’
+                <div>1 bedroom home</div>
+                <div>
+                  <div>$441/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x20">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 25’
+                <div>2 bedroom home</div>
+                <div>
+                  <div>$490/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x25">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 30’
+                <div>3 bedroom home</div>
+                <div>
+                  <div>$588/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x30">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 40’
+                <div>4 bedroom home</div>
+                <div>
+                  <div>$784/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x40">
+          </label>
+          <label class="bloc" (click)="scroll(target)">
+            <div class="marge">
+              <div class="centreAjust">
+                10’ x 50’
+                <div>5 bedroom home</div>
+                <div>
+                  <div>$980/mo</div>
+                </div>
+              </div>
+            </div>
+            <input type="radio" name="planSize" class="chkbx" value="10x50">
+          </label>
+        </div>
+
+
+        <div>
+          <div>
+            <h4>Select term length</h4>
+            The longer you store, the more you save.
+          </div>
+          <div class="containerR">
+            <label class="bloc">
+              <div class="marge">
+                <div class="centreAjust" #target>
+                  Month to month
+                  <div>Most flexible</div>
+                </div>
+              </div>
+              <input type="radio" name="length" class="chkbx" value="5x5">
+            </label>
+            <div class="bloc2">
+              <div class="blocs">
+                <label class="bloc">
+                  <div class="marge">
+                    <div class="centreAjust">
+                      4 months +
+                      <div>20% discount</div>
+                    </div>
+                  </div>
+                  <input type="radio" name="length" class="chkbx" value="5x5">
+                </label>
+                <label class="bloc">
+                  <div class="marge">
+                    <div class="centreAjust">
+                      8 months +
+                      <div>50% discount</div>
+                    </div>
+                  </div>
+                  <input type="radio" name="length" class="chkbx" value="5x5">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="msg">
+            <h3>Free pickup and free delivery</h3>
+            <h6>100% free first pickup and final delivery when you store for at least 4 months! You’ll never visit a
+              self-storage unit again. It’s that simple.</h6>
+          </div>
+          <div>
+            <h6>100% free first pickup and final delivery when you store for at least 4 months! You’ll never visit a
+              self-storage unit again. It’s that simple.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+
   <hr>
   <div><app-information></app-information></div>
   <hr>
-  Smart Storage FAQ
+  <div><app-questions></app-questions></div>
 </div>

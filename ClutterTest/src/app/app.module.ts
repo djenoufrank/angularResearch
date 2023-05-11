@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { RightSideComponent } from './main/right-side/rightSide.component';
 import { LeftSideComponent } from './main/left-side/leftSide.component';
 import { InformationComponent } from './main/information/information.component';
+import { QuestionsComponent } from './main/questions/questions.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InformationComponent } from './main/information/information.component';
     MainComponent,
     RightSideComponent,
     LeftSideComponent,
-    InformationComponent
+    InformationComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
