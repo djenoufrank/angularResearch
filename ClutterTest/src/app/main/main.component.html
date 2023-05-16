@@ -3,139 +3,138 @@
     <div class="col"><app-rightSide></app-rightSide></div> -->
   <div class="row">
     <div class="col">
-      <div class="left-container fixed-height">
-        <div> <img src="assets/smart_storage.avif" alt="Image 2" class="img-fluid"><br>
-        </div>
-        <div class="imgs">
-          <div> <img src="assets/smart_storage.avif" alt="Image 2" class="img-fluid">
-            <p>Your text goescwxcwcw here.</p>
-          </div>
-          <div> <img src="assets/smart_storage.avif" alt="Image 2" class="img-fluid"><br>
-            <p>Your text goesxwcwxcw here.</p>
-          </div>
-        </div>
-        <div id="lastItem" style="justify-content: center; display: flex;">
-          <button
-            style="border: 1px solid #1e9974; color: #1e9974; background-color: white;border-radius: 3px; padding: 10px; text-decoration: solid;">
-            Learn more</button>
+      <div class="left-top">
+        <div class="imgChange" [ngStyle]="{ 'width': defaultWidth + 'px' }"> <img id="mainImg" [src]="imgSrc"
+            class="img-fluid" alt="5.5" style="position: absolute; opacity: 1;"><br>
         </div>
 
       </div>
+      <div>
+        maps
+      </div>
     </div>
-
     <div class="col">
-      <div class="right-container items-column" #itemsColumn>
+      <div class="right-container">
         <div class="title1">
           <h4>Select storage size</h4> HELP ME PICK A SIZE<br>
         </div>
         <div class="containerR">
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 5’ x 5’
                 <div>Small closet size</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 1</div>
                 <div>
                   <div>$74/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="5x5">
+            <input type="radio" name="planSize" class="chkbx" value="5x5" id="1" (click)="scroll(target,1,200)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 5’ x 10’
                 <div>Walk-in closet size</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 2</div>
                 <div>
                   <div>$125/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="5x10">
+            <input type="radio" name="planSize" class="chkbx" value="5x10" id="2" (click)="scroll(target,2,300)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 10’
                 <div>Garage size</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 3</div>
                 <div>
                   <div>$218/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x10">
+            <input type="radio" name="planSize" class="chkbx" value="10x10" id="3" (click)="scroll(target,3,400)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 15’
                 <div>Studio apartment</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 4</div>
                 <div>
                   <div>$326/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x15">
+            <input type="radio" name="planSize" class="chkbx" value="10x15" id="4" (click)="scroll(target,4,500)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 20’
                 <div>1 bedroom home</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 5</div>
                 <div>
                   <div>$441/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x20">
+            <input type="radio" name="planSize" class="chkbx" value="10x20" id="5" (click)="scroll(target,1,200)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 25’
                 <div>2 bedroom home</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 6</div>
                 <div>
                   <div>$490/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x25">
+            <input type="radio" name="planSize" class="chkbx" value="10x25" id="6" (click)="scroll(target,1,200)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 30’
                 <div>3 bedroom home</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 7</div>
                 <div>
                   <div>$588/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x30">
+            <input type="radio" name="planSize" class="chkbx" value="10x30" id="7" (click)="scroll(target,1,200)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 40’
                 <div>4 bedroom home</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 8</div>
                 <div>
                   <div>$784/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x40">
+            <input type="radio" name="planSize" class="chkbx" value="10x40" id="8" (click)="scroll(target,1,200)">
           </label>
-          <label class="bloc" (click)="scroll(target)">
+          <label class="bloc">
             <div class="marge">
               <div class="centreAjust">
                 10’ x 50’
                 <div>5 bedroom home</div>
+                <div class="desc" style="font-size: 12px;font-style: italic;">desciption 9</div>
                 <div>
                   <div>$980/mo</div>
                 </div>
               </div>
             </div>
-            <input type="radio" name="planSize" class="chkbx" value="10x50">
+            <input type="radio" name="planSize" class="chkbx" value="10x50" id="9" (click)="scroll(target,1,200)">
           </label>
         </div>
 
@@ -145,15 +144,16 @@
             <h4>Select term length</h4>
             The longer you store, the more you save.
           </div>
-          <div class="containerR">
+          <div class="containerR" #target>
             <label class="bloc">
               <div class="marge">
-                <div class="centreAjust" #target>
+                <div class="centreAjust">
                   Month to month
                   <div>Most flexible</div>
+                  <div class="desc" style="font-size: 12px;font-style: italic;">desciption 10</div>
                 </div>
               </div>
-              <input type="radio" name="length" class="chkbx" value="5x5">
+              <input type="radio" name="length" class="chkbx" value="1">
             </label>
             <div class="bloc2">
               <div class="blocs">
@@ -162,18 +162,20 @@
                     <div class="centreAjust">
                       4 months +
                       <div>20% discount</div>
+                      <div class="desc" style="font-size: 12px;font-style: italic;">desciption 12</div>
                     </div>
                   </div>
-                  <input type="radio" name="length" class="chkbx" value="5x5">
+                  <input type="radio" name="length" class="chkbx" value="4">
                 </label>
                 <label class="bloc">
                   <div class="marge">
                     <div class="centreAjust">
                       8 months +
                       <div>50% discount</div>
+                      <div class="desc" style="font-size: 12px;font-style: italic;">desciption 13</div>
                     </div>
                   </div>
-                  <input type="radio" name="length" class="chkbx" value="5x5">
+                  <input type="radio" name="length" class="chkbx" value="8">
                 </label>
               </div>
             </div>

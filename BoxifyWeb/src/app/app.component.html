@@ -1,0 +1,5 @@
+<input #mapSearchField type="text" class="my-map-search-field" [(ngModel)]="address" placeholder="Enter address">
+<button (click)="moveToAddress()">Move</button><br><br>
+<google-map height="400px" width="400px" [center]="initialCenter" [options]="mapConfig" [zoom]="mapZoom">
+  <map-marker [position]="markerPosition"></map-marker>
+</google-map>

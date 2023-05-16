@@ -38,15 +38,15 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-.bloc2{
-  border: 2px solid;
+.bloc2 {
+  border: 3px dashed;
   border-radius: 4px;
   cursor: pointer;
   display: block;
   position: relative;
   border-color: #1e9974;
 }
-.msg{
+.msg {
   background-color: #1e9974;
   text-align: start;
   border-radius: 4px;
@@ -54,10 +54,10 @@
   padding: 5px;
 }
 .msg::before {
-  content:'';
+  content: "";
   position: relative;
   left: 80%;
-  top:0% ;
+  top: 0%;
   margin: 0 auto;
   width: 0;
   height: 0;
@@ -65,33 +65,33 @@
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
 }
-.title1{
-    margin-top: 50px;
-    margin-bottom: 35px;
+.title1 {
+  margin-top: 50px;
+  margin-bottom: 35px;
 }
- .right-container {
-  /* overflow-y: scroll; */
+.right-container {
   position: relative;
   overflow-y: scroll;
   height: calc(100vh - 100px);
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.imgs{
+.imgs {
   padding: 5px;
   display: flex;
   justify-content: center;
 }
-.left-container{
-  /* height: 500px; */
+.left-top {
+  position: relative;
+  height: 100vh;
   margin-top: 50px;
   margin-bottom: 35px;
 }
-.col{
+.col {
   width: 50%;
 }
 
-.row{
+.row {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -101,3 +101,11 @@
   display: none;
 }
 
+.imgChange {
+  display: flex;
+  height: 100%;
+  position: relative;
+  margin: 15px;
+  align-items: center;
+  justify-content: center;
+}
