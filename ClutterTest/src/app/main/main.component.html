@@ -1,7 +1,5 @@
 <div class="container">
-  <!-- <div class="col"><app-leftSide></app-leftSide></div>
-    <div class="col"><app-rightSide></app-rightSide></div> -->
-  <div class="row">
+  <div class="row" >
     <div class="col">
       <div class="left-top">
         <div class="imgChange" [ngStyle]="{ 'width': defaultWidth + 'px' }"> <img id="mainImg" [src]="imgSrc"
@@ -9,8 +7,26 @@
         </div>
 
       </div>
-      <div>
-        maps
+      <div class="left-down" style="align-items: bottom;">
+        <google-map height="400px" width="400px" [center]="initialCenter" [options]="mapConfig" [zoom]="mapZoom">
+          <map-marker [position]="markerPosition" [options]="markerOptions"></map-marker>
+        </google-map>
+        <div class="mb-3">
+        <label for="street" class="form-label">Street &nbsp; </label>
+        <input #mapSearchField type="text" id="street" [(ngModel)]="address" placeholder="Enter address"><br>
+
+        <label for="#num" class="form-label">Number &nbsp; </label>
+        <input id="num" type="text" class="num" [(ngModel)]="flatNumber" placeholder="number"> &nbsp;
+        <button (click)="moveToAddress()" class="btn btn-primary">Move</button><br><br>
+        <label for="post" class="form-label">Postal code  &nbsp; </label>
+        <input type="text" id="post" [(ngModel)]="postal_code"> &nbsp;&nbsp;
+        <label for="city" class="form-label">City &nbsp;</label>
+        <input type="text" id="city" [(ngModel)]="city">
+        <!-- <label for="dept" class="form-label">Dept  &nbsp;</label>
+        <input type="text" id="dept" [(ngModel)]="department">&nbsp;&nbsp; &nbsp; -->
+        <label for="count" class="form-label">Country  &nbsp;</label>
+        <input type="text" id="count" [(ngModel)]="country">
+      </div>
       </div>
     </div>
     <div class="col">
@@ -190,6 +206,9 @@
               self-storage unit again. It’s that simple.</h6>
           </div>
         </div>
+      </div>
+      <div style="display: flex; justify-content: left;margin-top: 100px;">
+        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'e
       </div>
     </div>
   </div>

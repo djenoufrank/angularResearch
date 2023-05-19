@@ -10,6 +10,8 @@ import { RightSideComponent } from './main/right-side/rightSide.component';
 import { LeftSideComponent } from './main/left-side/leftSide.component';
 import { InformationComponent } from './main/information/information.component';
 import { QuestionsComponent } from './main/questions/questions.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { QuestionsComponent } from './main/questions/questions.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    GoogleMapsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -85,7 +85,7 @@ export class AppComponent {
         this.changeInputStyle();
         const geocoder = new google.maps.Geocoder();
 
-        if (this.searchField.nativeElement.value.split(',').length < 3) {
+      //  if (this.searchField.nativeElement.value!=google.maps.places) {
           this.address =
             this.flatNumber +
             ' ,' +
@@ -94,10 +94,6 @@ export class AppComponent {
             this.city +
             ' ,' +
             this.country;
-        } else {
-          this.address =
-            this.flatNumber + ' ,' + this.searchField.nativeElement.value;
-        }
         let arrayTest: String[] = this.address.split(',');
         let arrayTest2: String[] = arrayTest[1].split(' ');
         let newStr: String = '';
@@ -123,6 +119,7 @@ export class AppComponent {
           }
         });
       }
+    this.address='';
     } else {
       this.changeInputStyle();
     }
