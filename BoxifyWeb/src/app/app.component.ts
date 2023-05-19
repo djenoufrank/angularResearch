@@ -34,6 +34,7 @@ export class AppComponent {
   country: string = '';
   flatNumber: string = '';
   department: string = '';
+  postal_code: string = '';
   @ViewChild('mapSearchField') searchField!: ElementRef;
   @ViewChild('GoogleMap') map!: GoogleMap;
   @ViewChild('flatNumber') myInputRef!: ElementRef<HTMLInputElement>;
@@ -61,55 +62,68 @@ export class AppComponent {
     this.country = '';
     this.flatNumber = '';
     this.department = '';
-    //   console.log("et  "+place.address_components?.at(0)?.long_name+" hum "+place.address_components?.at(0)?.types);
-    //   console.log("et  "+place.address_components?.at(1)?.long_name+" hum "+place.address_components?.at(1)?.types);
-    //   console.log("et "+place.address_components?.at(2)?.long_name+ " hum "+place.address_components?.at(2)?.types);
-    this.city = '' + place.address_components?.at(1)?.long_name;
-
-    this.department = '' + place.address_components?.at(2)?.long_name;
-    this.country = '' + place.address_components?.at(3)?.long_name;
+    this.postal_code = '';
+    place.address_components?.forEach((property) => {
+      if (property.types[0] === 'locality') {
+        this.city = '' + property.long_name;
+      } else if (
+        property.types[0] === 'administrative_area_level_1' ||
+        property.types[0] === 'administrative_area_level_2'
+      ) {
+        this.department = '' + property.long_name;
+      } else if (property.types[0] === 'country') {
+        this.country = '' + property.long_name;
+      } else if (property.types[0] === 'postal_code') {
+        this.postal_code = '' + property.long_name;
+      }
+    });
   }
 
   moveToAddress() {
-
     if (this.flatNumber.length != 0 && !Number.isNaN(Number(this.flatNumber))) {
-      if(this.city.length!=0 && this.country.length!=0){
+      if (this.city.length != 0 && this.country.length != 0) {
+        this.changeInputStyle();
+        const geocoder = new google.maps.Geocoder();
 
-      this.changeInputStyle();
-      const geocoder = new google.maps.Geocoder();
-
-
-      if(this.searchField.nativeElement.value.split(',').length<3){
-        this.address=
-        this.flatNumber + " ," + this.searchField.nativeElement.value+","+this.city+" ,"+this.country;
-      }
-      else{
-        this.address =
-        this.flatNumber + " ," + this.searchField.nativeElement.value;
-      }
-     let arrayTest:String[]=this.address.split(',');
-     let arrayTest2:String[]= arrayTest[1].split(' ');
-     let newStr:String='';
-     arrayTest2.forEach((text) => {
-      if (text.match(/\d/) == null){
-        newStr+=" "+ text;
-      }
-  });
-
-  arrayTest[1]=newStr;
-  this.address= arrayTest.join(',');
-      geocoder.geocode({ address: this.address }, (results, status) => {
-        if (status === 'OK') {
-          if (results && results[0].geometry?.location) {
-            const location = results[0].geometry.location;
-            this.mapZoom = 16;
-            this.initialCenter = { lat: location.lat(), lng: location.lng() };
-            this.markerPosition = { lat: location.lat(), lng: location.lng() };
-          }
+        if (this.searchField.nativeElement.value.split(',').length < 3) {
+          this.address =
+            this.flatNumber +
+            ' ,' +
+            this.searchField.nativeElement.value +
+            ',' +
+            this.city +
+            ' ,' +
+            this.country;
+        } else {
+          this.address =
+            this.flatNumber + ' ,' + this.searchField.nativeElement.value;
         }
-      });
-    }
-  } else {
+        let arrayTest: String[] = this.address.split(',');
+        let arrayTest2: String[] = arrayTest[1].split(' ');
+        let newStr: String = '';
+        arrayTest2.forEach((text) => {
+          if (text.match(/\d/) == null) {
+            newStr += ' ' + text;
+          }
+        });
+
+        arrayTest[1] = newStr;
+        this.address = arrayTest.join(',');
+        geocoder.geocode({ address: this.address }, (results, status) => {
+          if (status === 'OK') {
+            if (results && results[0].geometry?.location) {
+              const location = results[0].geometry.location;
+              this.mapZoom = 16;
+              this.initialCenter = { lat: location.lat(), lng: location.lng() };
+              this.markerPosition = {
+                lat: location.lat(),
+                lng: location.lng(),
+              };
+            }
+          }
+        });
+      }
+    } else {
       this.changeInputStyle();
     }
   }
