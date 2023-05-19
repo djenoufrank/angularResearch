@@ -1,5 +1,11 @@
-<input #mapSearchField type="text" class="my-map-search-field" [(ngModel)]="address" placeholder="Enter address">
-<button (click)="moveToAddress()">Move</button><br><br>
+
+
 <google-map height="400px" width="400px" [center]="initialCenter" [options]="mapConfig" [zoom]="mapZoom">
-  <map-marker [position]="markerPosition"></map-marker>
+  <map-marker [position]="markerPosition" [options]="markerOptions"></map-marker>
 </google-map>
+street :<input #mapSearchField type="text" class="my-map-search-field" [(ngModel)]="address" placeholder="Enter address" autocomplete="off">
+<button (click)="moveToAddress()" >Move</button><br><br>
+num :<input id="num" type="text" class="my-map-search-field num" [(ngModel)]="flatNumber" placeholder=""><br>
+city :<input type="text" class="my-map-search-field" [(ngModel)]="city" placeholder="">
+department :<input  type="text" class="my-map-search-field" [(ngModel)]="department" placeholder="">
+country :<input  type="text" class="my-map-search-field" [(ngModel)]="country" placeholder=""><br>
