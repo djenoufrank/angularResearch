@@ -7,7 +7,7 @@
         </div>
 
       </div>
-      <div class="left-down" style="align-items: bottom;">
+      <div class="left-down" #target2>
         <google-map height="400px" width="400px" [center]="initialCenter" [options]="mapConfig" [zoom]="mapZoom">
           <map-marker [position]="markerPosition" [options]="markerOptions"></map-marker>
         </google-map>
@@ -161,7 +161,7 @@
             The longer you store, the more you save.
           </div>
           <div class="containerR" #target>
-            <label class="bloc">
+            <label class="bloc" (click)="scroll2(target2)">
               <div class="marge">
                 <div class="centreAjust">
                   Month to month
@@ -173,7 +173,7 @@
             </label>
             <div class="bloc2">
               <div class="blocs">
-                <label class="bloc">
+                <label class="bloc" (click)="scroll2(target2)">
                   <div class="marge">
                     <div class="centreAjust">
                       4 months +
@@ -183,7 +183,7 @@
                   </div>
                   <input type="radio" name="length" class="chkbx" value="4">
                 </label>
-                <label class="bloc">
+                <label class="bloc" (click)="scroll2(target2)">
                   <div class="marge">
                     <div class="centreAjust">
                       8 months +

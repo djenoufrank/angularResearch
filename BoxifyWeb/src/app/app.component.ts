@@ -1,11 +1,10 @@
-import { ArrayType } from '@angular/compiler';
 import {
   Component,
   ElementRef,
   ViewChild,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import { GoogleMap, MapInfoWindow } from '@angular/google-maps';
+import { GoogleMap } from '@angular/google-maps';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

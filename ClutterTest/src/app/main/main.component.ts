@@ -10,7 +10,7 @@ import { GoogleMap } from '@angular/google-maps';
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
+ // changeDetection: ChangeDetectionStrategy.Default,
 })
 export class MainComponent {
   defaultWidth: number = 200;
@@ -54,6 +54,9 @@ export class MainComponent {
     el.scrollIntoView({behavior:'smooth'});
     this.defaultWidth = width;
     this.imgSrc = this.imageSources[index - 1];
+  }
+  scroll2(el: HTMLElement) {
+    el.scrollIntoView({behavior:'smooth'});
   }
 
   ngAfterViewInit(): void {
